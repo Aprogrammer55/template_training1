@@ -1,0 +1,196 @@
+:root {
+    --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+    --Light-slate-blue: hsl(252, 100%, 67%);
+    --Light-royal-blue: hsl(241, 81%, 54%);
+    --Violet-blue: hsla(256, 72%, 46%, 1);
+    --Persian-blue: hsla(241, 72%, 46%, 0);
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+}
+
+span::after {
+    border-top-color: var(--blue-color);
+}
+
+p {
+    font-size: 18px;
+}
+
+:host,
+:root {
+    --fa-style-family-classic: "Font Awesome 6 Free";
+    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+}
+
+:host,
+:root {
+    --fa-style-family-brands: "Font Awesome 6 Brands";
+    --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    margin: 0;
+}
+
+.page {
+    height: 100vb;
+    width: 100%;
+    position: relative;
+}
+
+.page .container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 20px;
+    box-shadow: 3px 3px 5px lightblue;
+}
+
+@media (max-width: 375px) {
+    .page .container {
+        flex-direction: column;
+    }
+
+    .page .container .result,
+    .page .container .summary {
+        width: 100%;
+    }
+}
+
+.page .container .result,
+.page .container .summary {
+    min-width: 200px;
+}
+
+.page .container .result h3,
+.page .container .result h2,
+.page .container .result p {
+    color: white;
+}
+
+.page .container .result {
+    background-color: var(--Light-royal-blue);
+    border-radius: 20px;
+}
+
+.page .container .result h3 {
+    font-weight: normal;
+    opacity: 0.8;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.page .container .result .score {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    background-color: var(--Cobalt-blue);
+}
+
+.page .container .result .score h2 {
+    font-size: 50px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.page .container .result .score span {
+    color: grey;
+}
+
+.page .container .result>h2 {
+    text-align: center;
+}
+
+.page .container .result>p {
+    text-align: center;
+    font-weight: normal;
+    padding-bottom: 30px;
+    color: rgb(184, 181, 181);
+}
+
+.page .container .summary {
+    width: 100%;
+    background-color: var(--White);
+}
+
+.page .container .summary section {
+    margin: 20px 5px;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.page .container .summary .red {
+    background-color: hsl(0 100% 67% / 0.1);
+}
+
+.page .container .summary .red i,
+.page .container .summary .red span:not(:last-of-type) {
+    color: var(--Light-red);
+}
+
+.page .container .summary .yellow {
+    background-color: hsl(39 100% 56% / .1);
+}
+
+.page .container .summary .yellow i,
+.page .container .summary .yellow span:not(:last-of-type) {
+    color: var(--Orangey-yellow);
+}
+
+.page .container .summary .Light-blue {
+    background-color: hsl(166 100% 37% / .1);
+}
+
+.page .container .summary .Light-blue i,
+.page .container .summary .Light-blue span:not(:last-of-type) {
+    color: var(--Green-teal);
+}
+
+.page .container .summary .blue {
+    background-color: hsl(234 85% 45% / .1);
+}
+
+.page .container .summary .blue i,
+.page .container .summary .blue span:not(:last-of-type) {
+    color: var(--Cobalt-blue);
+}
+
+.page .container .summary section i {
+    margin-right: 10px;
+}
+
+.page .container .summary button {
+    border: none;
+    width: calc(100% - 10px);
+    margin-right: 10px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: var(--Dark-gray-blue);
+    color: white;
+    cursor: pointer;
+}
+
+.page .container .summary button:hover {
+    background-color: var(--Light-royal-blue);
+}
