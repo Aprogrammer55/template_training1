@@ -58,20 +58,28 @@ body {
     box-shadow: 3px 3px 5px lightblue;
 }
 
+.page .container .result {
+    min-width: 250px;
+
+}
+
+.page .container .summary {
+    min-width: 200px;
+}
+
 @media (max-width: 375px) {
     .page .container {
         flex-direction: column;
+        width: 95%;
     }
 
-    .page .container .result,
+    .page .container .result {
+        margin-top: 80%;
+    }
+
     .page .container .summary {
-        width: 100%;
+        margin-bottom: 20px;
     }
-}
-
-.page .container .result,
-.page .container .summary {
-    min-width: 200px;
 }
 
 .page .container .result h3,
@@ -133,11 +141,38 @@ body {
 }
 
 .page .container .summary section {
+    position: relative;
     margin: 20px 5px;
     padding: 15px;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
+}
+
+.page .container .summary section::before {
+    content: "";
+    position: absolute;
+    border-width: 2px 3px 3px 2px;
+    border-style: solid;
+    border-color: grey transparent transparent grey;
+    border-radius: 30%;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+}
+
+.page .container .summary section::after {
+    content: "";
+    position: absolute;
+    border-width: 3px 2px 2px 3px;
+    border-style: solid;
+    border-color: transparent grey grey transparent;
+    border-radius: 30%;
+    right: 0;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
 }
 
 .page .container .summary .red {
